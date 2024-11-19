@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Search-for-Grasp</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          
+          <!-- Title. -->
+          <h1 class="title is-2 publication-title">Leveraging 3D Reconstruction for Mechanical Search on Cluttered Shelves</h1>
+          <p class="subtitle">Conference on Robot Learning (CoRL) 2023</p>
+          
+          <!-- Authors. -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://seungyeon-k.github.io">Seungyeon Kim</a><sup>*, 1</sup>,</span>
+            <span class="author-block">
+              Young Hun Kim<sup>*, 1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.gabe-yhlee.com">Yonghyeon Lee</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/robotics.snu.ac.kr/fcp/">Frank C. Park</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Seoul National University,</span>
+            <span class="author-block"><sup>2</sup>Korea Institute For Advanced Study</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+          </div>
+          
+          <!-- Icons. -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://proceedings.mlr.press/v229/kim23a/kim23a.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=plNMhY2kxgM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/seungyeon-k/Search-for-Grasp-public"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+            </div>
+          </div>
+          
+          <!-- Blank. -->
+          <div class="columns is-centered">
+            <div class="content">
+              <h2 class="title is-3"></h2>
+            </div>            
+          </div>
+
+          <!-- TL;DR. -->
+          <div class="columns is-centered has-text-justified interpolation-panel">
+            <div class="column is-full-width">
+              <h2 class="title is-4">
+                <font color="#808080">
+                  <p></p><p></p><p></p>
+                  TL;DR: We propose a 3D reconstruction-based meachnical search algorithm on cluttered shelves.
+                </font>
+              </h2>
+            </div>
+          </div>
+          
+          <!-- Blank. -->
+          <div class="columns is-centered">
+            <div class="content">
+              <h2 class="title is-3"></h2>
+            </div>            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Finding and grasping a target object on a cluttered shelf, especially
+            when the target is occluded by other unknown objects and initially invisible, remains 
+            a significant challenge in robotic manipulation. While there have been
+            advances in finding the target object by rearranging surrounding objects using
+            specialized tools, developing algorithms that work with standard robot grippers
+            remains an unresolved issue. In this paper, we introduce a novel framework for
+            finding and grasping the target object using a standard gripper, employing pushing
+            and pick-and-place actions. To achieve this, we introduce two indicator functions:
+            (i) an existence function, determining the potential presence of the target, and (ii)
+            a graspability function, assessing the feasibility of grasping the identified target.
+            We then formulate a model-based optimal control problem. The core component 
+            of our approach involves leveraging a 3D recognition model, enabling efficient 
+            estimation of the proposed indicator functions and their associated dynamics
+            models. Our method succeeds in finding and grasping the target object using a
+            standard robot gripper in both simulations and real-world settings. In particular,
+            we demonstrate the adaptability and robustness of our method in the presence of
+            noise in real-world vision sensor data.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/plNMhY2kxgM?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<!-- Citation. -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Citation</h2>
+    <pre><code>
+@inproceedings{kim2023leveraging,
+  title={Leveraging 3D Reconstruction for Mechanical Search on Cluttered Shelves},
+  author={Kim, Seungyeon and Kim, Young Hun and Lee, Yonghyeon and Park, Frank C},
+  booktitle={Conference on Robot Learning},
+  pages={822--848},
+  year={2023},
+  organization={PMLR}
+}
+    </code></pre>
+  </div>
+</section>
+
+<!-- Footer. -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website template modified from <a href="https://nerfies.github.io/">NeRFies</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
