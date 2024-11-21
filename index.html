@@ -26,6 +26,43 @@
 
 <body>
 
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://seungyeon-k.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://dsqnet.github.io">
+            [T-ASE 2022] DSQNet
+          </a>
+          <a class="navbar-item" href="https://sqpdnet.github.io">
+            [CoRL 2022] SQPDNet
+          </a>
+          <a class="navbar-item" href="https://t2sqnet.github.io">
+            [CoRL 2024] T<sup>2</sup>SQNet
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -125,6 +162,41 @@
             </div>            
           </div>
 
+          <!-- Teaser Video. -->
+          <div class="content has-text-left">
+            <h2 class="title is-3">Mechanical Search</h2>
+            <p>
+              Our method is able to find and grasp the target object using a standard two-finger robot gripper, 
+              even in the presence of noise from vision sensor data in real-world settings.
+            </p>
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <div class="content">
+                  <p>
+                    <b>Cluttered shelf with 3~4 occluding objects</b>
+                  </p>
+                  <video id="sd" autoplay controls muted playsinline height="100%">
+                    <source src="./assets/videos/34.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="content">
+                  <p>
+                    <b>Cluttered shelf with 5~6 occluding objects</b>
+                  </p>
+                  <video id="sd" autoplay controls muted playsinline height="100%">
+                    <source src="./assets/videos/56.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -175,6 +247,91 @@
     <!--/ Paper video. -->
   </div>
 </section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Recognition Model. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Mechanical Search Algorithm</h2>
+
+        <!-- A General Framework for Mechanical Search and Grasping. -->
+        <h3 class="title is-4">A General Framework for Mechanical Search and Grasping</h3>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we propose a novel optimal control framework for mechanical search with 
+            practical algorithms that leverage 3D reconstruction models. First, we introduce two 
+            indicator functions (denoting the target's candidate pose by \(x\in \mathrm{SE}(3)\)): 
+            (i) an existence function \(f(x)\) that indicates if the target can be present at 
+            \(x\) and (ii) a graspability function \(g(x)\) that indicates if the target at \(x\) is 
+            graspable. The objective then becomes to rearrange surrounding objects until only one 
+            existable and graspable pose \(x^*\) remains, i.e., there exists a unique 
+            \(x^*\in \mathrm{SE}(3)\) such that \(f(x^*)=1\) and \(g(x^*)=1\), which leads to a 
+            straightforward definition of a cost function using \(f\) and \(g\).
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <img src="./assets/images/ms.PNG"
+                 alt="ms"/>
+          </div>
+        </div>
+
+        <!-- 3D Object Recognition-based Mechanical Search. -->
+        <h3 class="title is-4">3D Object Recognition-based Mechanical Search</h3>
+        <div class="content has-text-justified">
+          <p>
+            we leverage a 3D object recognition model to effectively estimate the 
+            functions \(f, g\) and their corresponding dynamics models; therefore we formulate a 
+            tractable model-based optimal control problem. Specifically, we employ a recent 3D 
+            recognition model rooted in <b>superquadric</b> primitives. 
+            Notably, the superquadric representation allows for rapid collision checks, 
+            depth image rendering, and the utilization of pushing dynamics models, 
+            which leads to effective estimations of \(f\) and \(g\) and their dynamics models. 
+            To mitigate accumulated estimation errors during optimal control, we adopt the model 
+            predictive control with a short time horizon. 
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <img src="./assets/images/3dms.PNG"
+                 alt="dsqnet"/>
+          </div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Pushing Manipulation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Read-world Experiments</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Through experiments conducted in both simulations and real-world scenarios, we have validated 
+            the effectiveness of our 3D reconstruction-based approach. Our method successfully identifies 
+            and grasps the target object using a standard two-finger robot gripper, even in the presence of 
+            noise from vision sensor data in real-world settings. Real-world manipulation videos are provided below.
+          </p>
+        </div>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/FoejNGHf1XM?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Citation. -->
 <section class="section" id="BibTeX">
